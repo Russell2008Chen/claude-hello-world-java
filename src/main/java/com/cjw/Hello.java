@@ -1,0 +1,7 @@
+package com.cjw;
+
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello, Claude Code!");
+    }
+}
