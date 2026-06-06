@@ -1,11 +1,11 @@
-package com.cjw.utils;                                                               
+package com.cjw.utils;
 
-import org.junit.Test;                                                               
-import static org.junit.Assert.*;                                                    
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-/**                                                                                  
- * StringUtil工具类的单元测试                                                        
- */                                                                                  
+/**
+ * StringUtil工具类的单元测试
+ */
 public class StringUtilTest {                                                        
 
     @Test                                                                            
@@ -86,10 +86,33 @@ public class StringUtilTest {
         assertNull(StringUtil.toLowerCase(null));                                    
     }                                                                                
 
-    @Test                                                                            
-    public void testToLowerCaseWithString() {                                        
-        assertEquals("hello", StringUtil.toLowerCase("HELLO"));                      
-        assertEquals("hello world", StringUtil.toLowerCase("Hello World"));          
-        assertEquals("123", StringUtil.toLowerCase("123"));                          
-    }                                                                                
+    @Test
+    public void testToLowerCaseWithString() {
+        assertEquals("hello", StringUtil.toLowerCase("HELLO"));
+        assertEquals("hello world", StringUtil.toLowerCase("Hello World"));
+        assertEquals("123", StringUtil.toLowerCase("123"));
+    }
+
+    @Test
+    public void testMergeWithBothNull() {
+        assertNull(StringUtil.merge(null, null));
+    }
+
+    @Test
+    public void testMergeWithOneNull() {
+        assertEquals("hello", StringUtil.merge("hello", null));
+        assertEquals("world", StringUtil.merge(null, "world"));
+    }
+
+    @Test
+    public void testMergeWithBothStrings() {
+        assertEquals("hello world", StringUtil.merge("hello", " world"));
+    }
+
+    @Test
+    public void testMergeWithEmptyStrings() {
+        assertEquals("", StringUtil.merge("", ""));
+        assertEquals("hello", StringUtil.merge("hello", ""));
+        assertEquals("world", StringUtil.merge("", "world"));
+    }
 }     
