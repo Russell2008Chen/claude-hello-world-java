@@ -2,6 +2,8 @@
 
 这是一个简单的Java Hello World项目。
 
+Hello
+
 ## 项目结构
 
 ```
